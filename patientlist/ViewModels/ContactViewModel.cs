@@ -39,18 +39,24 @@ namespace patientlist.ViewModels
             _contactList = contactList;
             _contacts = new ObservableCollection<ContactMappingViewModel>();
 
-            CreateContactCommand = new CreateContactCommand(_contacts);
+            CreateContactCommand = new CreateContactCommand(this,_contacts);
             RemoveContactCommand = new RemoveContactCommand(_contacts);
 
-            UpdateContacts();
+            UpdateContacts(CreateContactCommand);
         }
 
-        private void UpdateContacts()
+        private void UpdateContacts(ICommand createContactCommand)
         {
             _contacts.Clear();
 
-            foreach (var contact in _contactList.GetAllContacts())
-                _contacts.Add(new ContactMappingViewModel(contact));
+            foreach (Contact contact in _contactList.GetAllContacts())
+            {
+                if (createContactCommand is CreateContactCommand cmd)
+                {
+                    ContactMappingViewModel contactMapping = new ContactMappingViewModel(contact, cmd.OnAgePropertyChanged);
+                    _contacts.Add(contactMapping);
+                }
+            }
         }
     }
 }

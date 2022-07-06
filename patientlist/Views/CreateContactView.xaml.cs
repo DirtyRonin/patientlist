@@ -1,14 +1,13 @@
 ﻿using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace patientlist.Views
 {
     /// <summary>
-    /// Interaction logic for ContactView.xaml
+    /// Interaction logic for CreateContactView.xaml
     /// </summary>
-    public partial class ContactView : UserControl
+    public partial class CreateContactView : UserControl
     {
-        public ContactView()
+        public CreateContactView()
         {
             InitializeComponent();
         }

@@ -1,11 +1,5 @@
 ﻿using patientlist.Models;
 using patientlist.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace patientlist
@@ -42,6 +36,12 @@ namespace patientlist
             _contactList.AddContact(new Contact("Peter", "Parker", 16));
             _contactList.AddContact(new Contact("Betty", "Sue", 20));
             _contactList.AddContact(new Contact("Fredderick", "Kruger", 56));
+            _contactList.AddContact(new Contact("Peter", "Parker", 16));
+            _contactList.AddContact(new Contact("Betty", "Sue", 20));
+            _contactList.AddContact(new Contact("Fredderick", "Kruger", 56));
+            _contactList.AddContact(new Contact("Peter", "Parker", 16));
+            _contactList.AddContact(new Contact("Betty", "Sue", 20));
+            
         }
     }
 }
